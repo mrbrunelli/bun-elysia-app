@@ -11,5 +11,6 @@ export class SignUpController implements Controller {
 }
 
 type HttpRequest = {
-  body: any;
+  username: string;
+  password: string;
 };

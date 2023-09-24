@@ -1,8 +1,14 @@
-import Elysia from "elysia";
-import { SignUpController } from "../../application/controllers/signup-controller";
+import { Elysia, t } from "elysia";
 import { adaptElysiaRouter } from "../adapter/elysia-router";
+import { makeSignUpController } from "../factories/application/controllers/signup-controller";
 
 export default new Elysia().post(
   "/signup",
-  adaptElysiaRouter(new SignUpController())
+  adaptElysiaRouter(makeSignUpController()),
+  {
+    body: t.Object({
+      username: t.String(),
+      password: t.String(),
+    }),
+  }
 );
