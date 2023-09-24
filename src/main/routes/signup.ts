@@ -1,5 +1,5 @@
 import { Elysia, t } from "elysia";
-import { adaptElysiaRouter } from "../adapter/elysia-router";
+import { adaptElysiaRouter } from "../adapters/elysia-router";
 import { makeSignUpController } from "../factories/application/controllers/signup-controller";
 
 export default new Elysia().post(
